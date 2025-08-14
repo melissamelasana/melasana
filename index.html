@@ -4,14 +4,16 @@
   <meta charset="utf-8" />
   <meta name="viewport" content="width=device-width, initial-scale=1" />
   <title>MELASANA — Terapias corporales</title>
+
   <meta name="description" content="Cuerpo en calma, ser en flujo. Terapias corporales en Medellín: masaje tailandés, ventosas y moxibustión." />
-  <meta name="theme-color" content="#A8C3A0">
+  <meta name="theme-color" content="#BFD8B8">
   <link rel="canonical" href="https://melasana.com/" />
   <meta property="og:title" content="MELASANA — Terapias corporales" />
   <meta property="og:description" content="Cuerpo en calma, ser en flujo. Terapias corporales en Medellín: masaje tailandés, ventosas y moxibustión." />
   <meta property="og:url" content="https://melasana.com/" />
   <meta property="og:type" content="website" />
-  <!-- Favicon (opcional): coloca assets/favicon.ico en tu repo -->
+
+  <!-- Favicon (opcional). Sube assets/favicon.ico -->
   <link rel="icon" type="image/x-icon" href="assets/favicon.ico">
 
   <link rel="preconnect" href="https://fonts.googleapis.com">
@@ -21,33 +23,36 @@
 
   <style>
     :root{
-      --brand:#A8C3A0;      /* verde salvia pastel */
-      --brand-dark:#7BA77B; /* verde musgo (hover) */
-      --bg:#FAF3E0;         /* beige claro */
-      --bg-2:#F6F3EB;       /* beige muy suave */
-      --text:#5C5045;       /* marrón suave */
+      --brand:#A8C3A0;         /* acento verde salvia (bordes, detalles) */
+      --brand-dark:#93B895;     /* hover de acento */
+      --bg:#FAF3E0;             /* beige general de la web */
+      --bg-soft:#F6F3EB;        /* beige suave */
+      --text:#4A4A4A;           /* gris oscuro agradable */
+      --btn:#BFD8B8;            /* VERDE PASTEL de botones */
+      --btn-hover:#A9CBA6;      /* hover más oscuro */
+      --btn-text:#4A4A4A;       /* texto de botones */
+      --contact-bg:#EADBC8;     /* CAFÉ CLARO del apartado Contacto */
     }
     html{ scroll-behavior:smooth; }
-    body{ font-family:'Manrope',system-ui,-apple-system,Segoe UI,Roboto,sans-serif; }
-    .bg-brand{ background-color:var(--brand); }
-    .text-brand{ color:var(--brand-dark); }
-    .shadow-soft{ box-shadow:0 10px 25px rgba(92,80,69,.08); }
+    body{ font-family:'Manrope',system-ui,-apple-system,Segoe UI,Roboto,sans-serif; color:var(--text); background:var(--bg); }
 
-    /* Marco minimalista, delgado y uniforme para imágenes */
-    .frame{
-      border:1px solid rgb(187,213,183);           /* green-200 */
-      border-radius:1rem;
-      box-shadow:0 6px 16px rgba(187,213,183,.25); /* sombra suave verdosa */
-      background:linear-gradient(180deg, rgba(232,243,228,.35), rgba(250,243,224,.35));
-      padding:2px;                                  /* grosor muy fino */
-      display:inline-block;
-    }
+    /* Botón base */
+    .btn{ background:var(--btn); color:var(--btn-text); border-radius:0.75rem; font-weight:600; padding:0.75rem 1.25rem; display:inline-flex; align-items:center; justify-content:center; gap:.5rem; box-shadow:0 8px 18px rgba(169,203,166,.25); transition:background .2s ease, transform .08s ease; }
+    .btn:hover{ background:var(--btn-hover); }
+    .btn:active{ transform:translateY(1px); }
+    .btn-outline{ border:1px solid var(--brand); color:var(--brand-dark); background:transparent; }
+    .btn-outline:hover{ background:var(--bg-soft); }
+
+    /* Marco fino y uniforme para imágenes */
+    .frame{ border:1px solid rgb(187,213,183); border-radius:1rem; box-shadow:0 6px 16px rgba(187,213,183,.25); background:linear-gradient(180deg, rgba(232,243,228,.25), rgba(250,243,224,.25)); padding:2px; display:inline-block; }
     .frame img{ border-radius:0.9rem; }
+
+    .shadow-soft{ box-shadow:0 10px 25px rgba(92,80,69,.08); }
   </style>
 
   <script>
-    /* Evita que el CDN de Tailwind “purge” colores arbitrarios */
-    tailwind.config = { safelist: ['bg-[#FAF3E0]','bg-[#F6F3EB]','text-[#5C5045]','border-green-200'] }
+    /* Evita que el CDN de Tailwind purgue estos colores arbitrarios */
+    tailwind.config = { safelist: ['bg-[#FAF3E0]','bg-[#F6F3EB]','text-[#4A4A4A]','border-green-200'] }
   </script>
 
   <!-- Schema.org para SEO local -->
@@ -64,22 +69,23 @@
   }
   </script>
 </head>
-<body class="bg-[#FAF3E0] text-[#5C5045]">
+
+<body>
 
   <!-- Header -->
-  <header class="sticky top-0 z-50 bg-[#FAF3E0]/80 backdrop-blur border-b border-[#E9DFC7]">
+  <header class="sticky top-0 z-50 bg-[color:var(--bg)]/80 backdrop-blur border-b border-[color:var(--brand)]/30">
     <div class="max-w-6xl mx-auto px-4 py-3 flex items-center justify-between">
       <a href="#inicio" class="flex items-center gap-3 font-extrabold tracking-tight text-xl">
-        <!-- Logo (opcional): sube assets/logo-melasana.png -->
-        <img src="assets/logo.png" alt="MELASANA" class="h-8 w-auto hidden sm:block">
+        <!-- Logo (sube assets/logo-melasana.png para verlo; si no existe se muestra solo el texto) -->
+        <img src="assets/logo-melasana.png" alt="MELASANA" class="h-8 w-auto hidden sm:block">
         <span>MELASANA</span>
       </a>
       <nav class="hidden md:flex gap-6 text-sm">
-        <a href="#servicios" class="hover:text-brand">Servicios</a>
-        <a href="#sobre-mi" class="hover:text-brand">Sobre mí</a>
-        <a href="#contacto" class="hover:text-brand">Contacto</a>
+        <a href="#servicios" class="hover:text-[color:var(--brand-dark)]">Servicios</a>
+        <a href="#sobre-mi" class="hover:text-[color:var(--brand-dark)]">Sobre mí</a>
+        <a href="#contacto" class="hover:text-[color:var(--brand-dark)]">Contacto</a>
       </nav>
-      <a href="https://wa.me/573208611989?text=Hola%20Melasana%2C%20quiero%20agendar%20una%20sesión" class="inline-flex items-center gap-2 rounded-xl bg-brand px-4 py-2 text-white font-semibold shadow-soft hover:bg-[#7BA77B] focus:outline-none">
+      <a href="https://wa.me/573208611989?text=Hola%20Melasana%2C%20quiero%20agendar%20una%20sesión" class="btn">
         Reservar por WhatsApp
       </a>
     </div>
@@ -87,22 +93,22 @@
 
   <!-- Hero -->
   <section id="inicio" class="relative">
-    <div class="absolute inset-0 bg-gradient-to-br from-[#F6F3EB] via-white to-white"></div>
+    <div class="absolute inset-0 bg-gradient-to-br from-[color:var(--bg-soft)] via-white to-white"></div>
     <div class="relative max-w-6xl mx-auto px-4 py-16 lg:py-24 grid lg:grid-cols-2 gap-10 items-center">
       <div>
         <h1 class="text-4xl md:text-5xl font-extrabold leading-tight">
-          Bienvenido a <span class="text-brand">MELASANA</span>
+          Bienvenido a <span class="text-[color:var(--brand-dark)]">MELASANA</span>
         </h1>
         <p class="mt-5 text-lg opacity-90 max-w-prose">Tu espacio de bienestar y armonía. Terapias personalizadas para cuerpo y mente.</p>
         <div class="mt-8 flex flex-wrap gap-3">
-          <a href="#servicios" class="rounded-xl border border-green-200 text-brand px-5 py-3 font-semibold hover:bg-[#F6F3EB]">Ver servicios</a>
-          <a href="#contacto" class="rounded-xl bg-brand text-white px-5 py-3 font-semibold hover:bg-[#7BA77B]">Agendar</a>
+          <a href="#servicios" class="btn btn-outline">Ver servicios</a>
+          <a href="#contacto" class="btn">Agendar</a>
         </div>
         <p class="mt-6 text-sm opacity-70">Medellín, Colombia • @melissamelasana</p>
       </div>
       <div class="flex items-center justify-center">
+        <!-- Imagen vertical 853x1280 sin recorte -->
         <div class="frame">
-          <!-- Imagen vertical 853x1280 sin recorte -->
           <img src="assets/IMAGEN4.jpeg" alt="Espacio de terapias"
                loading="eager" decoding="async"
                class="max-h-[720px] md:max-h-[640px] w-auto h-auto object-contain">
@@ -119,7 +125,7 @@
 
       <div class="mt-10 grid md:grid-cols-2 lg:grid-cols-3 gap-6">
         <!-- Masaje Tailandés -->
-        <article class="rounded-2xl border border-[#E9DFC7] p-6 bg-white shadow-soft">
+        <article class="rounded-2xl border border-[color:var(--brand)]/35 p-6 bg-white shadow-soft">
           <h3 class="text-xl font-bold">Masaje Tailandés</h3>
           <p class="text-sm opacity-80 mt-1">Presiones profundas, movilizaciones articulares y estiramientos en líneas de energía (Sen).</p>
           <ul class="mt-4 text-sm list-disc list-inside space-y-1">
@@ -128,11 +134,11 @@
             <li>Restaura la energía</li>
             <li>Reduce el estrés</li>
           </ul>
-          <p class="mt-5 font-semibold">1 hora — <span class="text-brand">$180.000</span></p>
+          <p class="mt-5 font-semibold">1 hora — <span class="text-[color:var(--brand-dark)]">$180.000</span></p>
         </article>
 
         <!-- Moxibustión -->
-        <article class="rounded-2xl border border-[#E9DFC7] p-6 bg-white shadow-soft">
+        <article class="rounded-2xl border border-[color:var(--brand)]/35 p-6 bg-white shadow-soft">
           <h3 class="text-xl font-bold">Moxibustión</h3>
           <p class="text-sm opacity-80 mt-1">Calor terapéutico con artemisa en puntos de acupuntura para activar el flujo de energía.</p>
           <ul class="mt-4 text-sm list-disc list-inside space-y-1">
@@ -141,11 +147,11 @@
             <li>Alivia articulaciones</li>
             <li>Activa el metabolismo</li>
           </ul>
-          <p class="mt-5 font-semibold">Sesión — <span class="text-brand">$90.000</span></p>
+          <p class="mt-5 font-semibold">Sesión — <span class="text-[color:var(--brand-dark)]">$90.000</span></p>
         </article>
 
         <!-- Ventosas -->
-        <article class="rounded-2xl border border-[#E9DFC7] p-6 bg-white shadow-soft">
+        <article class="rounded-2xl border border-[color:var(--brand)]/35 p-6 bg-white shadow-soft">
           <h3 class="text-xl font-bold">Ventosas</h3>
           <p class="text-sm opacity-80 mt-1">Técnica de vacío con copas para estimular piel, músculos y tejidos profundos.</p>
           <ul class="mt-4 text-sm list-disc list-inside space-y-1">
@@ -154,11 +160,11 @@
             <li>Alivia dolor muscular</li>
             <li>Favorece eliminación de toxinas</li>
           </ul>
-          <p class="mt-5 font-semibold">Sesión — <span class="text-brand">$90.000</span></p>
+          <p class="mt-5 font-semibold">Sesión — <span class="text-[color:var(--brand-dark)]">$90.000</span></p>
         </article>
 
         <!-- Masaje Fusión -->
-        <article class="rounded-2xl border border-[#E9DFC7] p-6 bg-white shadow-soft md:col-span-2 lg:col-span-1">
+        <article class="rounded-2xl border border-[color:var(--brand)]/35 p-6 bg-white shadow-soft md:col-span-2 lg:col-span-1">
           <h3 class="text-xl font-bold">Masaje Fusión</h3>
           <p class="text-sm opacity-80 mt-1">Masaje tailandés + técnica a elegir.</p>
           <ul class="mt-4 text-sm list-disc list-inside space-y-1">
@@ -170,20 +176,20 @@
             <li>Piernas y pies</li>
             <li>Abdomen</li>
           </ul>
-          <p class="mt-5 font-semibold">1 hora 30 min — <span class="text-brand">$240.000</span></p>
+          <p class="mt-5 font-semibold">1 hora 30 min — <span class="text-[color:var(--brand-dark)]">$240.000</span></p>
         </article>
       </div>
 
       <!-- CTA -->
       <div class="mt-12 flex flex-wrap items-center gap-4">
-        <a href="https://wa.me/573208611989?text=Hola%20Melasana%2C%20quiero%20agendar%20una%20sesión" class="rounded-xl bg-brand text-white px-6 py-3 font-semibold hover:bg-[#7BA77B] shadow-soft">Agendar por WhatsApp</a>
-        <a href="#contacto" class="rounded-xl border px-6 py-3 font-semibold hover:bg-[#FAF3E0] border-green-200">Ver disponibilidad</a>
+        <a href="https://wa.me/573208611989?text=Hola%20Melasana%2C%20quiero%20agendar%20una%20sesión" class="btn">Agendar por WhatsApp</a>
+        <a href="#contacto" class="btn btn-outline">Ver disponibilidad</a>
       </div>
     </div>
   </section>
 
   <!-- Sobre mí -->
-  <section id="sobre-mi" class="py-16 bg-[#F6F3EB]">
+  <section id="sobre-mi" class="py-16 bg-[color:var(--bg-soft)]">
     <div class="max-w-6xl mx-auto px-4 grid lg:grid-cols-2 gap-10 items-center">
       <div class="order-2 lg:order-1">
         <h2 class="text-3xl md:text-4xl font-extrabold">Sobre mí</h2>
@@ -192,8 +198,8 @@
           En el masaje tailandés encontré una vía poderosa para reconectar con el cuerpo y liberar tensiones para que la energía vuelva a fluir.
         </p>
         <div class="mt-6 flex gap-3">
-          <a href="#contacto" class="rounded-xl bg-brand text-white px-5 py-3 font-semibold hover:bg-[#7BA77B]">Agendar una sesión</a>
-          <a href="https://www.instagram.com/melissamelasana" target="_blank" class="rounded-xl border px-5 py-3 font-semibold hover:bg-[#F6F3EB] border-green-200">Instagram</a>
+          <a href="#contacto" class="btn">Agendar una sesión</a>
+          <a href="https://www.instagram.com/melissamelasana" target="_blank" class="btn btn-outline">Instagram</a>
         </div>
       </div>
       <div class="order-1 lg:order-2 flex items-center justify-center">
@@ -206,8 +212,8 @@
     </div>
   </section>
 
-  <!-- Contacto -->
-  <section id="contact" class="bg-[#FBF7EF] py-16">
+  <!-- Contacto (FONDO CAFÉ CLARO) -->
+  <section id="contacto" class="py-16" style="background: var(--contact-bg);">
     <div class="max-w-6xl mx-auto px-4 grid lg:grid-cols-2 gap-12 items-center">
       <div>
         <h2 class="text-3xl md:text-4xl font-extrabold">Contacto & Reservas</h2>
@@ -217,23 +223,29 @@
           <p>Instagram: <a class="underline" href="https://instagram.com/melissamelasana" target="_blank">@melissamelasana</a></p>
         </div>
         <div class="mt-6 flex gap-3">
-          <a href="https://wa.me/573208611989?text=Hola%20Melasana%2C%20quiero%20agendar%20una%20sesión" class="rounded-xl bg-white text-[#5C5045] px-5 py-3 font-semibold hover:bg-[#E9DFC7]">Reservar por WhatsApp</a>
-          <a href="#servicios" class="rounded-xl border border-[#E9DFC7] px-5 py-3 font-semibold hover:bg-[#E9DFC7]">Ver servicios</a>
+          <a href="https://wa.me/573208611989?text=Hola%20Melasana%2C%20quiero%20agendar%20una%20sesión" class="btn">Reservar por WhatsApp</a>
+          <a href="#servicios" class="btn btn-outline">Ver servicios</a>
         </div>
       </div>
-      <form class="bg-white/10 border border-white/20 rounded-2xl p-6" onsubmit="sendEmail(event)">
+
+      <!-- Formulario claro sobre fondo café claro -->
+      <form class="rounded-2xl p-6 border border-[color:var(--brand)]/35 bg-white/80 backdrop-blur shadow-soft" onsubmit="sendEmail(event)">
         <h3 class="text-xl font-bold">Escríbeme un mensaje</h3>
         <p class="opacity-80 text-sm mt-1">Tu mensaje llegará a mi correo.</p>
+
         <label class="block text-sm mt-4">Nombre
-          <input required class="mt-1 w-full rounded-xl border border-white/30 bg-[#5C5045] px-3 py-2 placeholder-white/70 text-white" type="text" id="name" placeholder="Tu nombre" />
+          <input required class="mt-1 w-full rounded-xl border border-[color:var(--brand)]/35 bg-white px-3 py-2" type="text" id="name" placeholder="Tu nombre" />
         </label>
+
         <label class="block text-sm mt-4">Email
-          <input required class="mt-1 w-full rounded-xl border border-white/30 bg-[#5C5045] px-3 py-2 placeholder-white/70 text-white" type="email" id="email" placeholder="tucorreo@email.com" />
+          <input required class="mt-1 w-full rounded-xl border border-[color:var(--brand)]/35 bg-white px-3 py-2" type="email" id="email" placeholder="tucorreo@email.com" />
         </label>
+
         <label class="block text-sm mt-4">Mensaje
-          <textarea required class="mt-1 w-full rounded-xl border border-white/30 bg-[#5C5045] px-3 py-2 placeholder-white/70 text-white" id="message" rows="4" placeholder="Quiero agendar una sesión..."></textarea>
+          <textarea required class="mt-1 w-full rounded-xl border border-[color:var(--brand)]/35 bg-white px-3 py-2" id="message" rows="4" placeholder="Quiero agendar una sesión..."></textarea>
         </label>
-        <button class="mt-5 w-full rounded-xl bg-brand px-4 py-3 font-semibold text-white hover:bg-[#7BA77B]" type="submit">Enviar</button>
+
+        <button class="mt-5 w-full btn" type="submit">Enviar</button>
         <p id="formStatus" class="mt-3 text-sm opacity-90 hidden">Enviando...</p>
       </form>
     </div>
@@ -243,7 +255,7 @@
     <p>© <span id="year"></span> MELASANA. Todos los derechos reservados.</p>
   </footer>
 
-  <!-- Formspree handler (cambia YOUR_FORM_ID por el tuyo) -->
+  <!-- Formspree (cambia YOUR_FORM_ID por el tuyo) -->
   <script>
     document.getElementById('year').textContent = new Date().getFullYear();
     async function sendEmail(e){
@@ -258,7 +270,9 @@
       };
       try {
         const res = await fetch('https://formspree.io/f/YOUR_FORM_ID', {
-          method: 'POST', headers: { 'Accept':'application/json', 'Content-Type':'application/json' }, body: JSON.stringify(payload)
+          method: 'POST',
+          headers: { 'Accept':'application/json', 'Content-Type':'application/json' },
+          body: JSON.stringify(payload)
         });
         if (res.ok) { status.textContent = '¡Mensaje enviado! Te responderé pronto.'; e.target.reset(); }
         else { status.textContent = 'No se pudo enviar. Inténtalo de nuevo.'; }
@@ -267,4 +281,5 @@
   </script>
 </body>
 </html>
+
 
