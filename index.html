@@ -3,105 +3,165 @@
 <head>
   <meta charset="utf-8" />
   <meta name="viewport" content="width=device-width, initial-scale=1" />
-  <title>MELASANA — Catálogo 2025</title>
-  <meta name="description" content="Terapias corporales en Medellín: masaje tailandés, ventosas, moxibustión y más. Cuerpo en calma, ser en flujo." />
-  <meta name="theme-color" content="#c0d9b8">
+  <title>MELASANA — Terapias corporales</title>
+  <meta name="description" content="Cuerpo en calma, ser en flujo. Terapias corporales en Medellín: masaje tailandés, ventosas y moxibustión." />
+  <meta name="theme-color" content="#A8C3A0">
+  <link rel="canonical" href="https://melasana.com/" />
+  <meta property="og:title" content="MELASANA — Terapias corporales" />
+  <meta property="og:description" content="Cuerpo en calma, ser en flujo. Terapias corporales en Medellín: masaje tailandés, ventosas y moxibustión." />
+  <meta property="og:url" content="https://melasana.com/" />
+  <meta property="og:type" content="website" />
+  <!-- Favicon (opcional): coloca assets/favicon.ico en tu repo -->
+  <link rel="icon" type="image/x-icon" href="assets/favicon.ico">
+
   <link rel="preconnect" href="https://fonts.googleapis.com">
   <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
   <link href="https://fonts.googleapis.com/css2?family=Manrope:wght@300;400;600;700&display=swap" rel="stylesheet">
   <script src="https://cdn.tailwindcss.com"></script>
+
   <style>
-    :root { --brand:#a8c3a0; }
-    html { scroll-behavior: smooth; }
-    body { font-family: 'Manrope', system-ui, -apple-system, Segoe UI, Roboto, sans-serif; }
+    :root{
+      --brand:#A8C3A0;      /* verde salvia pastel */
+      --brand-dark:#7BA77B; /* verde musgo (hover) */
+      --bg:#FAF3E0;         /* beige claro */
+      --bg-2:#F6F3EB;       /* beige muy suave */
+      --text:#5C5045;       /* marrón suave */
+    }
+    html{ scroll-behavior:smooth; }
+    body{ font-family:'Manrope',system-ui,-apple-system,Segoe UI,Roboto,sans-serif; }
+    .bg-brand{ background-color:var(--brand); }
+    .text-brand{ color:var(--brand-dark); }
+    .shadow-soft{ box-shadow:0 10px 25px rgba(92,80,69,.08); }
+
+    /* Marco minimalista, delgado y uniforme para imágenes */
+    .frame{
+      border:1px solid rgb(187,213,183);           /* green-200 */
+      border-radius:1rem;
+      box-shadow:0 6px 16px rgba(187,213,183,.25); /* sombra suave verdosa */
+      background:linear-gradient(180deg, rgba(232,243,228,.35), rgba(250,243,224,.35));
+      padding:2px;                                  /* grosor muy fino */
+      display:inline-block;
+    }
+    .frame img{ border-radius:0.9rem; }
   </style>
+
+  <script>
+    /* Evita que el CDN de Tailwind “purge” colores arbitrarios */
+    tailwind.config = { safelist: ['bg-[#FAF3E0]','bg-[#F6F3EB]','text-[#5C5045]','border-green-200'] }
+  </script>
+
+  <!-- Schema.org para SEO local -->
+  <script type="application/ld+json">
+  {
+    "@context": "https://schema.org",
+    "@type": "LocalBusiness",
+    "name": "MELASANA",
+    "url": "https://melasana.com/",
+    "telephone": "+57 320 861 19 89",
+    "address": {"@type":"PostalAddress","addressLocality":"Medellín","addressCountry":"CO"},
+    "sameAs": ["https://www.instagram.com/melissamelasana"],
+    "description":"Terapias corporales: masaje tailandés, ventosas y moxibustión."
+  }
+  </script>
 </head>
-<body class="bg-[#fdfbf6] text-[#4a4a4a]">
+<body class="bg-[#FAF3E0] text-[#5C5045]">
 
   <!-- Header -->
-  <header class="sticky top-0 z-50 bg-[#fdfbf6]/80 backdrop-blur border-b border-[#d8e2d0]">
+  <header class="sticky top-0 z-50 bg-[#FAF3E0]/80 backdrop-blur border-b border-[#E9DFC7]">
     <div class="max-w-6xl mx-auto px-4 py-3 flex items-center justify-between">
-      <a href="#inicio" class="font-extrabold tracking-tight text-xl">MELASANA <span class="text-[#88a97c]">Terapias</span></a>
+      <a href="#inicio" class="flex items-center gap-3 font-extrabold tracking-tight text-xl">
+        <!-- Logo (opcional): sube assets/logo-melasana.png -->
+        <img src="assets/logo-melasana.png" alt="MELASANA" class="h-8 w-auto hidden sm:block">
+        <span>MELASANA</span>
+      </a>
       <nav class="hidden md:flex gap-6 text-sm">
-        <a href="#servicios" class="hover:text-[#88a97c]">Servicios</a>
-        <a href="#sobre-mi" class="hover:text-[#88a97c]">Sobre mí</a>
-        <a href="#contacto" class="hover:text-[#88a97c]">Contacto</a>
+        <a href="#servicios" class="hover:text-brand">Servicios</a>
+        <a href="#sobre-mi" class="hover:text-brand">Sobre mí</a>
+        <a href="#contacto" class="hover:text-brand">Contacto</a>
       </nav>
-      <a href="https://wa.me/573208611989?text=Hola%20Melissa%2C%20quiero%20agendar%20una%20sesión" class="inline-flex items-center gap-2 rounded-xl bg-[#88a97c] px-4 py-2 text-white font-semibold shadow hover:bg-[#76936b] focus:outline-none">
+      <a href="https://wa.me/573208611989?text=Hola%20Melasana%2C%20quiero%20agendar%20una%20sesión" class="inline-flex items-center gap-2 rounded-xl bg-brand px-4 py-2 text-white font-semibold shadow-soft hover:bg-[#7BA77B] focus:outline-none">
         Reservar por WhatsApp
       </a>
     </div>
   </header>
 
- <!-- Hero -->
-<section class="relative max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 py-12">
-  <div class="grid md:grid-cols-2 gap-10 items-center">
-    <div>
-      <h1 class="text-4xl sm:text-5xl font-bold text-[#5E7554] leading-tight">
-        Bienvenido a <span class="text-[#A8B695]">MELASANA</span>
-      </h1>
-      <p class="mt-4 text-lg text-gray-700">
-        Tu espacio de bienestar y armonía. Terapias personalizadas para cuerpo y mente.
-      </p>
+  <!-- Hero -->
+  <section id="inicio" class="relative">
+    <div class="absolute inset-0 bg-gradient-to-br from-[#F6F3EB] via-white to-white"></div>
+    <div class="relative max-w-6xl mx-auto px-4 py-16 lg:py-24 grid lg:grid-cols-2 gap-10 items-center">
+      <div>
+        <h1 class="text-4xl md:text-5xl font-extrabold leading-tight">
+          Bienvenido a <span class="text-brand">MELASANA</span>
+        </h1>
+        <p class="mt-5 text-lg opacity-90 max-w-prose">Tu espacio de bienestar y armonía. Terapias personalizadas para cuerpo y mente.</p>
+        <div class="mt-8 flex flex-wrap gap-3">
+          <a href="#servicios" class="rounded-xl border border-green-200 text-brand px-5 py-3 font-semibold hover:bg-[#F6F3EB]">Ver servicios</a>
+          <a href="#contacto" class="rounded-xl bg-brand text-white px-5 py-3 font-semibold hover:bg-[#7BA77B]">Agendar</a>
+        </div>
+        <p class="mt-6 text-sm opacity-70">Medellín, Colombia • @melissamelasana</p>
+      </div>
+      <div class="flex items-center justify-center">
+        <div class="frame">
+          <!-- Imagen vertical 853x1280 sin recorte -->
+          <img src="assets/IMAGEN4.jpeg" alt="Espacio de terapias"
+               loading="eager" decoding="async"
+               class="max-h-[720px] md:max-h-[640px] w-auto h-auto object-contain">
+        </div>
+      </div>
     </div>
-    <div class="rounded-[2rem] border-2 border-transparent bg-gradient-to-tr from-[#d6e8d0] via-[#fdfbf6] to-[#e8f3e4] p-[3px] shadow-md shadow-green-100 flex items-center justify-center">
-  <img src="assets/IMAGEN4.jpeg" alt="Espacio de terapias"
-       class="max-h-[720px] w-auto h-auto object-contain rounded-[1.8rem]">
-</div>
-  </div>
-</section>
+  </section>
 
   <!-- Servicios -->
-  <section id="servicios" class="py-16 bg-[#fdfbf6]">
+  <section id="servicios" class="py-16 bg-white">
     <div class="max-w-6xl mx-auto px-4">
       <h2 class="text-3xl md:text-4xl font-extrabold">Servicios</h2>
-      <p class="mt-2 text-[#5c5c5c]">Elige la experiencia que tu cuerpo necesita hoy.</p>
+      <p class="mt-2 opacity-80">Elige la experiencia que tu cuerpo necesita hoy.</p>
 
       <div class="mt-10 grid md:grid-cols-2 lg:grid-cols-3 gap-6">
         <!-- Masaje Tailandés -->
-        <article class="rounded-2xl border border-[#d8e2d0] p-6 bg-white/80 shadow-sm">
+        <article class="rounded-2xl border border-[#E9DFC7] p-6 bg-white shadow-soft">
           <h3 class="text-xl font-bold">Masaje Tailandés</h3>
-          <p class="text-sm text-[#6b6b6b] mt-1">Presiones profundas, movilizaciones articulares y estiramientos en líneas de energía (Sen).</p>
-          <ul class="mt-4 text-sm list-disc list-inside space-y-1 text-[#5c5c5c]">
+          <p class="text-sm opacity-80 mt-1">Presiones profundas, movilizaciones articulares y estiramientos en líneas de energía (Sen).</p>
+          <ul class="mt-4 text-sm list-disc list-inside space-y-1">
             <li>Libera tensiones</li>
             <li>Mejora la flexibilidad</li>
             <li>Restaura la energía</li>
             <li>Reduce el estrés</li>
           </ul>
-          <p class="mt-5 font-semibold">1 hora — <span class="text-[#88a97c]">$180.000</span></p>
+          <p class="mt-5 font-semibold">1 hora — <span class="text-brand">$180.000</span></p>
         </article>
 
         <!-- Moxibustión -->
-        <article class="rounded-2xl border border-[#d8e2d0] p-6 bg-white/80 shadow-sm">
+        <article class="rounded-2xl border border-[#E9DFC7] p-6 bg-white shadow-soft">
           <h3 class="text-xl font-bold">Moxibustión</h3>
-          <p class="text-sm text-[#6b6b6b] mt-1">Calor terapéutico con artemisa en puntos de acupuntura para activar el flujo de energía.</p>
-          <ul class="mt-4 text-sm list-disc list-inside space-y-1 text-[#5c5c5c]">
+          <p class="text-sm opacity-80 mt-1">Calor terapéutico con artemisa en puntos de acupuntura para activar el flujo de energía.</p>
+          <ul class="mt-4 text-sm list-disc list-inside space-y-1">
             <li>Estimula la energía</li>
             <li>Mejora la circulación</li>
             <li>Alivia articulaciones</li>
             <li>Activa el metabolismo</li>
           </ul>
-          <p class="mt-5 font-semibold">Sesión — <span class="text-[#88a97c]">$90.000</span></p>
+          <p class="mt-5 font-semibold">Sesión — <span class="text-brand">$90.000</span></p>
         </article>
 
         <!-- Ventosas -->
-        <article class="rounded-2xl border border-[#d8e2d0] p-6 bg-white/80 shadow-sm">
+        <article class="rounded-2xl border border-[#E9DFC7] p-6 bg-white shadow-soft">
           <h3 class="text-xl font-bold">Ventosas</h3>
-          <p class="text-sm text-[#6b6b6b] mt-1">Técnica de vacío con copas para estimular piel, músculos y tejidos profundos.</p>
-          <ul class="mt-4 text-sm list-disc list-inside space-y-1 text-[#5c5c5c]">
+          <p class="text-sm opacity-80 mt-1">Técnica de vacío con copas para estimular piel, músculos y tejidos profundos.</p>
+          <ul class="mt-4 text-sm list-disc list-inside space-y-1">
             <li>Moviliza el estancamiento</li>
             <li>Promueve la circulación</li>
             <li>Alivia dolor muscular</li>
             <li>Favorece eliminación de toxinas</li>
           </ul>
-          <p class="mt-5 font-semibold">Sesión — <span class="text-[#88a97c]">$90.000</span></p>
+          <p class="mt-5 font-semibold">Sesión — <span class="text-brand">$90.000</span></p>
         </article>
 
         <!-- Masaje Fusión -->
-        <article class="rounded-2xl border border-[#d8e2d0] p-6 bg-white/80 shadow-sm md:col-span-2 lg:col-span-1">
+        <article class="rounded-2xl border border-[#E9DFC7] p-6 bg-white shadow-soft md:col-span-2 lg:col-span-1">
           <h3 class="text-xl font-bold">Masaje Fusión</h3>
-          <p class="text-sm text-[#6b6b6b] mt-1">Masaje tailandés + técnica a elegir.</p>
-          <ul class="mt-4 text-sm list-disc list-inside space-y-1 text-[#5c5c5c]">
+          <p class="text-sm opacity-80 mt-1">Masaje tailandés + técnica a elegir.</p>
+          <ul class="mt-4 text-sm list-disc list-inside space-y-1">
             <li>Moxibustión</li>
             <li>Ventosas</li>
             <li>Estiramiento asistido</li>
@@ -110,67 +170,101 @@
             <li>Piernas y pies</li>
             <li>Abdomen</li>
           </ul>
-          <p class="mt-5 font-semibold">1 hora 30 min — <span class="text-[#88a97c]">$240.000</span></p>
+          <p class="mt-5 font-semibold">1 hora 30 min — <span class="text-brand">$240.000</span></p>
         </article>
       </div>
 
       <!-- CTA -->
       <div class="mt-12 flex flex-wrap items-center gap-4">
-        <a href="https://wa.me/573208611989?text=Hola%20Melissa%2C%20quiero%20agendar%20una%20sesión" class="rounded-xl bg-[#88a97c] text-white px-6 py-3 font-semibold hover:bg-[#76936b] shadow">Agendar por WhatsApp</a>
-        <a href="#contacto" class="rounded-xl border px-6 py-3 font-semibold hover:bg-[#f1f6ef]">Ver disponibilidad</a>
+        <a href="https://wa.me/573208611989?text=Hola%20Melasana%2C%20quiero%20agendar%20una%20sesión" class="rounded-xl bg-brand text-white px-6 py-3 font-semibold hover:bg-[#7BA77B] shadow-soft">Agendar por WhatsApp</a>
+        <a href="#contacto" class="rounded-xl border px-6 py-3 font-semibold hover:bg-[#FAF3E0] border-green-200">Ver disponibilidad</a>
       </div>
     </div>
   </section>
 
   <!-- Sobre mí -->
-  <section id="sobre-mi" class="py-16 bg-[#f6f4ef]">
-    <div class="max-w-6xl mx-auto px-4 grid md:grid-cols-2 gap-10 items-center">
-      <div class="aspect-[4/3] rounded-[2rem] border-4 border-transparent bg-gradient-to-tr from-[#d6e8d0] via-[#fdfbf6] to-[#e8f3e4] p-1 shadow-lg shadow-green-100">
-        <img src="assets/IMAGEN4.jpeg" alt="Melissa terapeuta" class="w-full h-full object-cover rounded-[1.8rem]">
-      </div>
-      <div>
+  <section id="sobre-mi" class="py-16 bg-[#F6F3EB]">
+    <div class="max-w-6xl mx-auto px-4 grid lg:grid-cols-2 gap-10 items-center">
+      <div class="order-2 lg:order-1">
         <h2 class="text-3xl md:text-4xl font-extrabold">Sobre mí</h2>
-        <p class="mt-4 text-[#5c5c5c]">Soy Melissa, terapeuta corporal certificada con más de 5 años de experiencia en técnicas orientales y terapias alternativas. Mi misión es ayudarte a reconectar con tu cuerpo, liberar tensiones y encontrar equilibrio físico y emocional.</p>
-        <p class="mt-4 text-[#5c5c5c]">En MELASANA combinamos técnicas tradicionales con un enfoque moderno, en un espacio acogedor pensado para tu bienestar.</p>
+        <p class="mt-4 leading-relaxed opacity-90">
+          Soy <strong>Melissa Echavarría</strong>. He explorado la danza, el yoga y la alimentación consciente, y me he formado en España, México y Argentina.
+          En el masaje tailandés encontré una vía poderosa para reconectar con el cuerpo y liberar tensiones para que la energía vuelva a fluir.
+        </p>
+        <div class="mt-6 flex gap-3">
+          <a href="#contacto" class="rounded-xl bg-brand text-white px-5 py-3 font-semibold hover:bg-[#7BA77B]">Agendar una sesión</a>
+          <a href="https://www.instagram.com/melissamelasana" target="_blank" class="rounded-xl border px-5 py-3 font-semibold hover:bg-[#F6F3EB] border-green-200">Instagram</a>
+        </div>
+      </div>
+      <div class="order-1 lg:order-2 flex items-center justify-center">
+        <div class="frame">
+          <img src="assets/IMAGEN5.jpeg" alt="Melissa Echavarría"
+               loading="lazy" decoding="async"
+               class="max-h-[720px] md:max-h-[560px] w-auto h-auto object-contain">
+        </div>
       </div>
     </div>
   </section>
 
   <!-- Contacto -->
-  <section id="contacto" class="py-16 bg-[#fdfbf6]">
-    <div class="max-w-6xl mx-auto px-4">
-      <h2 class="text-3xl md:text-4xl font-extrabold">Contacto</h2>
-      <p class="mt-2 text-[#5c5c5c]">Agenda tu cita o consulta disponibilidad.</p>
-
-      <div class="mt-8 grid md:grid-cols-2 gap-10">
-        <div>
-          <p class="text-lg font-semibold text-[#88a97c]">Teléfono / WhatsApp</p>
-          <p class="text-[#5c5c5c] mt-1"><a href="https://wa.me/573208611989" target="_blank">+57 320 861 1989</a></p>
-
-          <p class="text-lg font-semibold text-[#88a97c] mt-6">Email</p>
-          <p class="text-[#5c5c5c] mt-1">melasana.terapias@gmail.com</p>
-
-          <p class="text-lg font-semibold text-[#88a97c] mt-6">Ubicación</p>
-          <p class="text-[#5c5c5c] mt-1">Medellín, Colombia</p>
+  <section id="contacto" class="py-16 bg-[#5C5045] text-[#FAF3E0]">
+    <div class="max-w-6xl mx-auto px-4 grid lg:grid-cols-2 gap-12 items-center">
+      <div>
+        <h2 class="text-3xl md:text-4xl font-extrabold">Contacto & Reservas</h2>
+        <p class="mt-3 opacity-90">Medellín — Colombia</p>
+        <div class="mt-6 space-y-2">
+          <p>WhatsApp: <a class="underline" href="https://wa.me/573208611989">+57 320 861 19 89</a></p>
+          <p>Instagram: <a class="underline" href="https://instagram.com/melissamelasana" target="_blank">@melissamelasana</a></p>
         </div>
-
-        <div>
-          <iframe src="https://www.google.com/maps/embed?pb=!1m18!..." width="100%" height="300" style="border:0;" allowfullscreen="" loading="lazy"></iframe>
+        <div class="mt-6 flex gap-3">
+          <a href="https://wa.me/573208611989?text=Hola%20Melasana%2C%20quiero%20agendar%20una%20sesión" class="rounded-xl bg-white text-[#5C5045] px-5 py-3 font-semibold hover:bg-[#E9DFC7]">Reservar por WhatsApp</a>
+          <a href="#servicios" class="rounded-xl border border-[#E9DFC7] px-5 py-3 font-semibold hover:bg-[#E9DFC7]">Ver servicios</a>
         </div>
       </div>
+      <form class="bg-white/10 border border-white/20 rounded-2xl p-6" onsubmit="sendEmail(event)">
+        <h3 class="text-xl font-bold">Escríbeme un mensaje</h3>
+        <p class="opacity-80 text-sm mt-1">Tu mensaje llegará a mi correo.</p>
+        <label class="block text-sm mt-4">Nombre
+          <input required class="mt-1 w-full rounded-xl border border-white/30 bg-[#5C5045] px-3 py-2 placeholder-white/70 text-white" type="text" id="name" placeholder="Tu nombre" />
+        </label>
+        <label class="block text-sm mt-4">Email
+          <input required class="mt-1 w-full rounded-xl border border-white/30 bg-[#5C5045] px-3 py-2 placeholder-white/70 text-white" type="email" id="email" placeholder="tucorreo@email.com" />
+        </label>
+        <label class="block text-sm mt-4">Mensaje
+          <textarea required class="mt-1 w-full rounded-xl border border-white/30 bg-[#5C5045] px-3 py-2 placeholder-white/70 text-white" id="message" rows="4" placeholder="Quiero agendar una sesión..."></textarea>
+        </label>
+        <button class="mt-5 w-full rounded-xl bg-brand px-4 py-3 font-semibold text-white hover:bg-[#7BA77B]" type="submit">Enviar</button>
+        <p id="formStatus" class="mt-3 text-sm opacity-90 hidden">Enviando...</p>
+      </form>
     </div>
   </section>
 
-  <!-- Footer -->
-  <footer class="bg-[#88a97c] text-white py-6 mt-10">
-    <div class="max-w-6xl mx-auto px-4 flex flex-col md:flex-row items-center justify-between gap-4">
-      <p class="text-sm">© 2025 MELASANA. Todos los derechos reservados.</p>
-      <div class="flex gap-4">
-        <a href="https://instagram.com/melissamelasana" target="_blank">Instagram</a>
-        <a href="https://wa.me/573208611989" target="_blank">WhatsApp</a>
-      </div>
-    </div>
+  <footer class="py-8 text-center text-sm opacity-70">
+    <p>© <span id="year"></span> MELASANA. Todos los derechos reservados.</p>
   </footer>
 
+  <!-- Formspree handler (cambia YOUR_FORM_ID por el tuyo) -->
+  <script>
+    document.getElementById('year').textContent = new Date().getFullYear();
+    async function sendEmail(e){
+      e.preventDefault();
+      const status = document.getElementById('formStatus');
+      status.classList.remove('hidden');
+      status.textContent = 'Enviando...';
+      const payload = {
+        name: document.getElementById('name').value,
+        email: document.getElementById('email').value,
+        message: document.getElementById('message').value,
+      };
+      try {
+        const res = await fetch('https://formspree.io/f/YOUR_FORM_ID', {
+          method: 'POST', headers: { 'Accept':'application/json', 'Content-Type':'application/json' }, body: JSON.stringify(payload)
+        });
+        if (res.ok) { status.textContent = '¡Mensaje enviado! Te responderé pronto.'; e.target.reset(); }
+        else { status.textContent = 'No se pudo enviar. Inténtalo de nuevo.'; }
+      } catch(err){ status.textContent = 'Error de red. Revisa tu conexión.'; }
+    }
+  </script>
 </body>
 </html>
+
